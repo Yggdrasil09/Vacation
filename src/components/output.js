@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
-import GoogleMapReact from 'google-map-react';
-import Geocode from "react-geocode";
+import Geocode from 'react-geocode';
+import Map from './maps';
 
 
 class Output extends Component{
@@ -25,9 +25,10 @@ class Output extends Component{
         },error => {
             console.error(error);
         });
+
         return(
-            <div style={{height:'50vh',width:'80%'}}>
-                <GoogleMapReact bootstrapURLKeys={{ key:'AIzaSyDvoWla_tJUhFtCz9q8FP5MFVg39fXU_bE' }} defaultCenter={{lat:this.state.lat,lng:this.state.lng}} defaultZoom={14} />
+            <div className="grid">
+                <Map lat={this.state.lat} lng={this.state.lng} />
             </div>
         );
     }
