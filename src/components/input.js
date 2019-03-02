@@ -23,7 +23,7 @@ class Input extends Component{
     {
         // action
         e.preventDefault();
-        console.log(this.state.place);
+        this.setState({place:e.target.value});
     }
 
     render(){
@@ -33,7 +33,7 @@ class Input extends Component{
                     <h2 >Enter the place here!</h2>
                     <input className="inputarea" type="text" value={this.state.place} onChange={this.handleChange}/>
                 </form>
-                <Output/>
+                <Output place={this.state.place}/>
             </div>
         )
     }
