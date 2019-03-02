@@ -1,5 +1,6 @@
 body{
-	background-color:rgb(255, 255, 255);
+	background-image:url("./vaca.jpeg");
+	background-size:20%; 
 }
 
 .heading {
@@ -38,4 +39,5 @@ body{
 	box-shadow: 2px 2px 9px rgba(0, 0, 0, .5);
 	padding:2rem;
 	width:85%;
+	background-color:rgb(243, 241, 241);
 }
