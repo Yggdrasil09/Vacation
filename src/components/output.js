@@ -16,8 +16,7 @@ class Output extends Component{
     render(){
         Geocode.setApiKey('AIzaSyDvoWla_tJUhFtCz9q8FP5MFVg39fXU_bE');
         Geocode.enableDebug();
-        Geocode.fromAddress('Red Fort').then(response => {
-            console.log(this.props.place);
+        Geocode.fromAddress(this.props.spot).then(response => {
             const { lat, lng } = response.results[0].geometry.location;
             this.setState({
                 lat:lat,
@@ -28,7 +27,7 @@ class Output extends Component{
         });
         return(
             <div style={{height:'50vh',width:'80%'}}>
-                <GoogleMapReact bootstrapURLKeys={{ key:'AIzaSyDvoWla_tJUhFtCz9q8FP5MFVg39fXU_bE' }} defaultCenter={{lat:this.state.lat,lng:this.state.lng}} defaultZoom={15} />
+                <GoogleMapReact bootstrapURLKeys={{ key:'AIzaSyDvoWla_tJUhFtCz9q8FP5MFVg39fXU_bE' }} defaultCenter={{lat:this.state.lat,lng:this.state.lng}} defaultZoom={14} />
             </div>
         );
     }
